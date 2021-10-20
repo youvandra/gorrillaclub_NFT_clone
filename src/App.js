@@ -94,7 +94,7 @@ function Mint() {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
-  const [feedback, setFeedback] = useState("Maybe it's your lucky day.");
+  const [feedback, setFeedback] = useState("Click buy to mint your NFT.");
   const [claimingNft, setClaimingNft] = useState(false);
   const [mintAmount, setMintAmount] = useState(1)
   const claimNFTs = (_amount) => {
@@ -134,8 +134,8 @@ function Mint() {
 
 	const incrementMintAmount = () => {
 		let newMintAmount = mintAmount + 1
-		if (newMintAmount > 10) {
-			newMintAmount = 10
+		if (newMintAmount > 20) {
+			newMintAmount = 20
 		}
 		setMintAmount(newMintAmount)
 	}
@@ -149,8 +149,6 @@ function Mint() {
   useEffect(() => {
     getData();
   }, [blockchain.account]);
-  
-var input = document.getElementById("inputnft");
 
 return (
   <s.Screen>
@@ -247,7 +245,7 @@ return (
                   color: "var(--accent-text)",
                 }}
               >
-                1 NFT costs{" "}
+                1 GC costs{" "}
                 0.05{" "}
                 ETH.
               </s.TextTitle>
